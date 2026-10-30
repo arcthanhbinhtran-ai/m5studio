@@ -159,7 +159,7 @@ class Canh:
             ov = Image.new("RGBA", (W, H), (0, 0, 0, 0))
             d = ImageDraw.Draw(ov)
             for i, v in enumerate(self.vung):
-                bat = 0.8 + i * 1.3
+                bat = 0.5 + i * 0.8
                 if t < bat:
                     continue
                 k = ease((t - bat) / 0.45)
