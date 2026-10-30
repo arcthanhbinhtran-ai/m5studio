@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>M5 STUDIO - ảnh công bố</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  /* Khung vuông 1080x1080 - bản vuông của ảnh công bố */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1080px; overflow: hidden; background: #18181A; }
+  body {
+    font-family: "Be Vietnam Pro", "Segoe UI", Arial, sans-serif;
+    color: #EEEEF0;
+    position: relative;
+  }
+  .glow {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 900px 520px at 85% -6%, rgba(214, 58, 52, .42), transparent 70%),
+      radial-gradient(ellipse 700px 500px at -10% 105%, rgba(214, 58, 52, .22), transparent 70%);
+  }
+  .grid-bg {
+    position: absolute; inset: 0; opacity: .07;
+    background-image:
+      linear-gradient(#fff 1px, transparent 1px),
+      linear-gradient(90deg, #fff 1px, transparent 1px);
+    background-size: 54px 54px;
+    mask-image: linear-gradient(180deg, #000 0%, transparent 55%);
+  }
+  .wrap { position: absolute; inset: 0; padding: 56px 64px 52px; display: flex; flex-direction: column; }
+
+  .top { display: flex; align-items: center; justify-content: space-between; }
+  .logo-box { background: #F4F4F5; border-radius: 18px; padding: 14px 20px; box-shadow: 0 18px 50px rgba(214, 58, 52, .25); }
+  .logo-box img { height: 58px; display: block; }
+  .pill {
+    border: 2px solid #D63A34; color: #fff; background: rgba(214, 58, 52, .15);
+    font-weight: 800; font-size: 19px; letter-spacing: 3px; padding: 10px 20px; border-radius: 999px;
+  }
+
+  .kicker { margin-top: 34px; color: #D63A34; font-weight: 800; font-size: 22px; letter-spacing: 6px; }
+  h1 { margin-top: 8px; font-size: 80px; line-height: 1.02; font-weight: 900; letter-spacing: -2px; }
+  h1 em { font-style: normal; color: #D63A34; }
+  .lead { margin-top: 16px; font-size: 24px; line-height: 1.45; color: #C6C6CA; max-width: 900px; }
+  .lead b { color: #fff; font-weight: 700; }
+
+  .cards { margin-top: 30px; display: grid; grid-template-columns: 1.25fr 1fr 1fr; gap: 20px; }
+  .card {
+    background: #262629; border: 1px solid #36363B; border-radius: 22px; overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+  .card.hot { border-color: #D63A34; box-shadow: 0 0 0 2px rgba(214, 58, 52, .35), 0 24px 60px rgba(0, 0, 0, .45); }
+  .card .pic { height: 140px; background: #202023; position: relative; overflow: hidden; }
+  .card .pic img { width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+  .card .pic img[src$=".svg"] { object-fit: contain; }
+  .card .tag {
+    position: absolute; top: 14px; left: 14px; background: #D63A34; color: #fff;
+    font-size: 15px; font-weight: 800; letter-spacing: 1.5px; padding: 5px 12px; border-radius: 8px;
+  }
+  .card .body { padding: 14px 18px 16px; }
+  .card h3 { font-size: 24px; font-weight: 800; }
+  .card p { margin-top: 4px; font-size: 16px; line-height: 1.4; color: #C6C6CA; }
+  .price { display: inline-block; margin-top: 8px; font-weight: 800; font-size: 17px; }
+  .free { color: #4CC38A; }
+  .soon { color: #EC7060; }
+
+  .feat { margin-top: 26px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .feat div {
+    border-left: 4px solid #D63A34; padding: 6px 0 6px 18px;
+    font-size: 20px; line-height: 1.35; color: #C6C6CA; white-space: nowrap;
+  }
+  .feat b { display: block; color: #fff; font-size: 24px; margin-bottom: 2px; }
+
+  .bottom {
+    margin-top: auto; display: flex; align-items: center; justify-content: space-between;
+    background: #D63A34; border-radius: 24px; padding: 20px 28px;
+    box-shadow: 0 20px 60px rgba(214, 58, 52, .35);
+  }
+  .bottom .lbl { font-size: 17px; font-weight: 600; color: rgba(255, 255, 255, .85); letter-spacing: 1px; }
+  .bottom .url { white-space: nowrap; font-size: 27px; font-weight: 800; color: #fff; margin-top: 2px; letter-spacing: -.3px; }
+  .bottom .go {
+    background: #18181A; color: #fff; font-weight: 800; font-size: 21px;
+    padding: 14px 22px; border-radius: 16px; white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="grid-bg"></div>
+  <div class="wrap">
+    <div class="top">
+      <div class="logo-box"><img src="../../assets/img/m5-logo.png" alt="M5 STUDIO"></div>
+      <div class="pill">CHÍNH THỨC RA MẮT</div>
+    </div>
+
+    <div class="kicker">WEBSITE M5 STUDIO</div>
+    <h1>Bớt việc tay,<br><em>vẽ nhanh hơn.</em></h1>
+    <p class="lead">Plugin cho người dựng bản vẽ <b>cảnh quan, kiến trúc, quy hoạch</b> — tiếng Việt, miễn phí, tự cập nhật ngay trong AutoCAD.</p>
+
+    <div class="cards">
+      <div class="card hot">
+        <div class="pic"><img src="../../assets/img/m5dodac-dien-tich.png" alt=""><span class="tag">MỚI · v3.1</span></div>
+        <div class="body">
+          <h3>M5 ĐO ĐẠC</h3>
+          <p>Đo chiều dài, diện tích 1 nút bấm, soát chồng lấn, ra m² / ha.</p>
+          <span class="price free">Miễn phí</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="pic"><img src="../../assets/img/alo-the.svg" alt=""></div>
+        <div class="body">
+          <h3>ALO</h3>
+          <p>Layout hàng loạt, bộ bản vẽ, sheet set, in PDF cả bộ.</p>
+          <span class="price soon">Sắp ra mắt</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="pic"><img src="../../assets/img/ihl-the.svg" alt=""></div>
+        <div class="body">
+          <h3>IHL</h3>
+          <p>In PDF hàng loạt theo khung — cho sinh viên quy hoạch.</p>
+          <span class="price soon">Sắp ra mắt</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="feat">
+      <div><b>Tải miễn phí</b>Không key, không đăng ký</div>
+      <div><b>Tự cập nhật</b>Ngay trong AutoCAD</div>
+      <div><b>Có hướng dẫn</b>Video + PDF từng bước</div>
+    </div>
+
+    <div class="bottom">
+      <div>
+        <div class="lbl">GHÉ WEB TẢI NGAY</div>
+        <div class="url">arcthanhbinhtran-ai.github.io/m5studio</div>
+      </div>
+      <div class="go">Tải plugin →</div>
+    </div>
+  </div>
+</body>
+</html>
