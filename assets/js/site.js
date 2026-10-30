@@ -141,9 +141,13 @@
   function khungUngHo() {
     var u = CAI_DAT.ungHo;
     if (!u) return "";
+    var muc = u.mucTien || [];
+    var nutMuc = muc.length ? '<div class="amounts">' + muc.map(function (m, i) {
+      return '<button data-qr="' + esc(m.maQR) + '"' + (i === 0 ? ' class="on"' : "") + ">" + esc(m.nhan) + "</button>";
+    }).join("") + "</div>" : "";
     return '<section class="panel donate"><div class="pad">' +
-      "<h3>" + esc(u.tieuDe) + "</h3><p>" + esc(u.loiNhan) + "</p>" +
-      '<div class="box"><div class="qr"><img src="' + esc(u.maQR) + '" alt="Mã QR chuyển khoản ' + esc(u.nganHang) + '">' +
+      "<h3>" + esc(u.tieuDe) + "</h3><p>" + esc(u.loiNhan) + "</p>" + nutMuc +
+      '<div class="box"><div class="qr"><img id="maQR" src="' + esc(muc.length ? muc[0].maQR : u.maQR) + '" alt="Mã QR chuyển khoản ' + esc(u.nganHang) + '">' +
         "<small>Quét bằng app ngân hàng</small></div>" +
       '<div class="acct"><span>' + esc(u.nganHang) + "</span>" +
         '<span class="num">' + esc(u.soTaiKhoan) + '<button class="copy" data-chep="' + esc(u.soTaiKhoan) + '">Chép</button></span>' +
@@ -214,6 +218,15 @@
     lb.addEventListener("click", function () { lb.classList.remove("on"); });
     Array.prototype.forEach.call(document.querySelectorAll(".shot img"), function (im) {
       im.addEventListener("click", function () { lb.firstChild.src = im.src; lb.classList.add("on"); });
+    });
+    // Chọn mức ủng hộ -> đổi mã QR
+    var nutTien = document.querySelectorAll(".amounts button");
+    Array.prototype.forEach.call(nutTien, function (b) {
+      b.addEventListener("click", function () {
+        Array.prototype.forEach.call(nutTien, function (x) { x.classList.remove("on"); });
+        b.classList.add("on");
+        $("#maQR").src = b.getAttribute("data-qr");
+      });
     });
     // Nút chép số tài khoản
     Array.prototype.forEach.call(document.querySelectorAll("[data-chep]"), function (b) {

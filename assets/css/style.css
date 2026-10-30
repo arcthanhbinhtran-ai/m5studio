@@ -203,6 +203,13 @@ img { max-width: 100%; display: block; }
 
 .donate h3 { margin: 0 0 6px; font-size: 20px; }
 .donate p { margin: 0 0 14px; color: var(--lbl); font-size: 14px; }
+.amounts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 16px; }
+.amounts button {
+  font: inherit; font-weight: 800; font-size: 15px; min-height: 42px; cursor: pointer;
+  background: var(--field); color: var(--txt); border: 1px solid var(--line); border-radius: 10px;
+}
+.amounts button:hover { border-color: var(--dim); }
+.amounts button.on { background: var(--accent); border-color: var(--accent); color: #fff; }
 .donate .box { display: grid; grid-template-columns: 180px 1fr; gap: 18px; align-items: center; }
 .donate .qr { background: #fff; border-radius: 12px; padding: 10px; }
 .donate .qr img { width: 100%; image-rendering: pixelated; }
