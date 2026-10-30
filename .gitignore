@@ -3,3 +3,4 @@ tools/video/xt*.png
 tools/video/luoi*.png
 tools/video/__pycache__/
 tools/video/*.mp4
+tools/video/_*.mp4
