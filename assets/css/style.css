@@ -101,6 +101,15 @@ img { max-width: 100%; display: block; }
 .search svg { position: absolute; left: 13px; top: 13px; width: 18px; height: 18px; color: var(--dim); }
 .count { color: var(--dim); font-size: 13px; }
 
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: -8px 0 20px; }
+.chips button {
+  font: inherit; font-size: 13px; font-weight: 600; color: var(--lbl); cursor: pointer;
+  background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 5px 14px;
+}
+.chips button:hover { color: var(--txt); border-color: var(--dim); }
+.chips button.on { color: #fff; border-color: var(--accent); background: rgba(214, 58, 52, .18); }
+.card .soft { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; color: var(--dim); margin-bottom: 2px; }
+
 /* ---------- Lưới thẻ ---------- */
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; }
 .card {

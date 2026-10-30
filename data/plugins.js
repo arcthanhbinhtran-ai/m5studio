@@ -9,6 +9,8 @@
     ten        : tên hiện trên web
     moTaNgan   : một dòng hiện trên thẻ
     moTa       : đoạn giới thiệu ở trang chi tiết
+    phanMem    : phần mềm plugin chạy trong, ví dụ "AutoCAD", "SketchUp", "Revit".
+                 Có từ 2 phần mềm trở lên thì trang Plugin tự hiện hàng nút lọc theo phần mềm.
     trangThai  : "mien-phi"  = Miễn phí
                  "pro"       = có giá (ghi giá ở ô gia, ví dụ "199.000đ")
                  "sap-ra-mat"= Sắp ra mắt (chưa có nút Tải)
@@ -33,6 +35,7 @@ window.M5_PLUGINS = [
     ten: "M5 ĐO ĐẠC",
     moTaNgan: "Đo tổng chiều dài, diện tích hatch / polyline kín, soát chồng lấn.",
     moTa: "Chọn đường hay vùng trên bản vẽ là có ngay tổng chiều dài, tổng diện tích, kèm bảng kết quả từng đối tượng và từng layer. Polyline hở được kẻ đỏ chỗ hở và hỏi tự đóng; vùng chồng lấn được tô đỏ và trừ khỏi tổng nếu muốn. Số tổng tự chép sẵn, Ctrl+V là dán vào Excel hay Word.",
+    phanMem: "AutoCAD",
     trangThai: "mien-phi",
     gia: "",
     phienBan: "2.6",
@@ -63,6 +66,7 @@ window.M5_PLUGINS = [
     ten: "ALO",
     moTaNgan: "Tạo layout hàng loạt, bộ bản vẽ, field khung tên, sheet set và in PDF cả bộ.",
     moTa: "Dành cho người dựng hồ sơ nhiều bản vẽ: quét khung trong Model và tạo layout hàng loạt, quản lý bộ bản vẽ (số hiệu, tên, tỉ lệ, ngày), gán field khung tên để sửa một chỗ là mọi bản vẽ theo, đọc / sửa / thêm bản vẽ vào sheet set (.dst), xuất nhập Excel và in PDF cả bộ có mục lục theo nhóm.",
+    phanMem: "AutoCAD",
     trangThai: "sap-ra-mat",
     gia: "",
     phienBan: "",
@@ -86,6 +90,7 @@ window.M5_PLUGINS = [
     ten: "IHL",
     moTaNgan: "In PDF hàng loạt theo khung bản vẽ — miễn phí cho sinh viên quy hoạch.",
     moTa: "Tự tìm các khung bản vẽ trong Model và in ra PDF hàng loạt, gộp một file hoặc tách từng file. Bản 10.0 miễn phí cho sinh viên khoa quy hoạch.",
+    phanMem: "AutoCAD",
     trangThai: "sap-ra-mat",
     gia: "",
     phienBan: "10.0",

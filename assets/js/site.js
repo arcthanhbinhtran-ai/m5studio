@@ -60,7 +60,7 @@
     f.innerHTML =
       '<div class="wrap"><div>' +
         '<a class="brand" href="index.html"><img src="assets/img/m5-logo-sm.png" alt="M5 STUDIO"></a>' +
-        "<p>Plugin AutoCAD và công cụ làm hồ sơ cho người dựng bản vẽ cảnh quan, kiến trúc, quy hoạch. © " +
+        "<p>Plugin và công cụ làm hồ sơ cho người dựng bản vẽ cảnh quan, kiến trúc, quy hoạch. © " +
         new Date().getFullYear() + " M5 STUDIO.</p>" +
       '</div><div class="social">' + so + "</div></div>";
     document.body.appendChild(f);
@@ -81,7 +81,7 @@
       '<a class="pic" href="' + linkChiTiet(p) + '">' +
         (p.deXuat ? '<span class="tag">ĐỀ XUẤT</span>' : "") +
         '<img src="' + esc(p.anh) + '" alt="' + esc(p.ten) + '" loading="lazy"></a>' +
-      '<div class="body"><h3><a href="' + linkChiTiet(p) + '">' + esc(p.ten) + "</a></h3>" +
+      '<div class="body">' + (p.phanMem ? '<span class="soft">' + esc(p.phanMem) + '</span>' : '') + '<h3><a href="' + linkChiTiet(p) + '">' + esc(p.ten) + "</a></h3>" +
         '<p class="desc">' + esc(p.moTaNgan) + "</p>" + nhanGia(p) + "</div>" +
       '<div class="foot">' + luot +
         (taiDuoc
@@ -101,7 +101,7 @@
 
   /* ---------- Trang danh sách plugin ---------- */
   function trangPlugin() {
-    var loc = "tat-ca", tu = "";
+    var loc = "tat-ca", tu = "", pm = "";
     var hop = $("#luoi"), dem = $("#dem");
     $("#tongPlugin").textContent = PLUGINS.length;
     var tongTai = PLUGINS.reduce(function (s, p) { return s + (p.luotTai || 0); }, 0);
@@ -111,8 +111,9 @@
       var k = boDau(tu.trim());
       var ds = PLUGINS.filter(function (p) {
         if (loc !== "tat-ca" && p.trangThai !== loc) return false;
+        if (pm && p.phanMem !== pm) return false;
         if (!k) return true;
-        return boDau(p.ten + " " + p.moTaNgan + " " + (p.tinhNang || []).join(" ")).indexOf(k) >= 0;
+        return boDau(p.ten + " " + (p.phanMem || "") + " " + p.moTaNgan + " " + (p.tinhNang || []).join(" ")).indexOf(k) >= 0;
       });
       hop.innerHTML = ds.length ? ds.map(theePlugin).join("") :
         '<div class="empty">Không có plugin nào khớp. Thử bỏ bớt chữ tìm hoặc chọn "Tất cả".</div>';
@@ -127,6 +128,24 @@
         ve();
       });
     });
+    // Hàng chọn phần mềm: chỉ hiện khi có từ 2 phần mềm trở lên
+    var dsPm = [];
+    PLUGINS.forEach(function (p) { if (p.phanMem && dsPm.indexOf(p.phanMem) < 0) dsPm.push(p.phanMem); });
+    var hopPm = $("#locPm");
+    if (hopPm && dsPm.length > 1) {
+      hopPm.hidden = false;
+      hopPm.innerHTML = '<button class="on" data-pm="">Mọi phần mềm</button>' + dsPm.map(function (x) {
+        return '<button data-pm="' + esc(x) + '">' + esc(x) + "</button>";
+      }).join("");
+      Array.prototype.forEach.call(hopPm.querySelectorAll("button"), function (b) {
+        b.addEventListener("click", function () {
+          Array.prototype.forEach.call(hopPm.querySelectorAll("button"), function (x) { x.classList.remove("on"); });
+          b.classList.add("on");
+          pm = b.getAttribute("data-pm");
+          ve();
+        });
+      });
+    }
     $("#tim").addEventListener("input", function (e) { tu = e.target.value; ve(); });
     ve();
   }
@@ -186,7 +205,7 @@
     hop.innerHTML =
       '<div class="detail"><div>' +
         '<div class="crumb"><a href="plugin.html">Plugin</a> / ' + esc(p.ten) + "</div>" +
-        '<div class="kicker">PLUGIN AUTOCAD</div>' +
+        '<div class="kicker">PLUGIN' + (p.phanMem ? " " + esc(p.phanMem).toUpperCase() : "") + "</div>" +
         (p.deXuat ? '<span class="badge">ĐỀ XUẤT</span>' : "") +
         "<h1>" + esc(p.ten) + "</h1>" +
         '<p class="lead">' + esc(p.moTa) + "</p>" +
