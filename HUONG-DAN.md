@@ -22,6 +22,10 @@ Sửa `data/cai-dat.js`. Mã QR là ảnh `assets/img/qr-ung-ho.png`.
 
 Sửa `data/thu-vien.js` — trong file có sẵn mẫu.
 
+## Bài viết
+
+Sửa `data/bai-viet.js` — trong file có sẵn mẫu. Bài mới nhất tự lên đầu.
+
 ## Các trang
 
 | File | Trang |
@@ -30,5 +34,6 @@ Sửa `data/thu-vien.js` — trong file có sẵn mẫu.
 | `plugin.html` | Danh sách plugin, lọc + tìm |
 | `chi-tiet.html?id=...` | Chi tiết một plugin (dùng chung, đọc theo `id`) |
 | `thu-vien.html` | Thư viện |
+| `bai-viet.html` | Bài viết |
 
 Màu sắc nằm ở đầu file `assets/css/style.css` (bảng màu M5).

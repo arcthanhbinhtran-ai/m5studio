@@ -32,7 +32,7 @@
 
   /* ---------- Đầu trang / chân trang ---------- */
   function dauTrang(trang) {
-    var muc = [["index.html", "Trang chủ", "chu"], ["plugin.html", "Plugin", "plugin"], ["thu-vien.html", "Thư viện", "thuvien"]];
+    var muc = [["index.html", "Trang chủ", "chu"], ["plugin.html", "Plugin", "plugin"], ["thu-vien.html", "Thư viện", "thuvien"], ["bai-viet.html", "Bài viết", "baiviet"]];
     var nav = muc.map(function (m) {
       return '<a href="' + m[0] + '"' + (m[2] === trang ? ' class="on"' : "") + ">" + m[1] + "</a>";
     }).join("");
@@ -43,7 +43,6 @@
         '<a class="brand" href="index.html" aria-label="M5 STUDIO - Trang chủ">' +
           '<img src="assets/img/m5-logo-sm.png" alt="M5 STUDIO"></a>' +
         '<nav class="nav" id="nav">' + nav + "</nav>" +
-        '<a class="btn main small head-cta" href="plugin.html">Tải plugin</a>' +
         '<button class="menu-btn" id="menuBtn" aria-label="Mở menu">' + ICON.menu + "</button>" +
       "</div>";
     document.body.insertBefore(h, document.body.firstChild);
@@ -328,6 +327,43 @@
     ve();
   }
 
+  /* ---------- Bài viết ---------- */
+  function trangBaiViet() {
+    var ds = (window.M5_BAI_VIET || []).slice().sort(function (a, b) { return a.ngay < b.ngay ? 1 : -1; });
+    var tu = "";
+    function ngayDep(s) {
+      var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s || "");
+      return m ? m[3] + "/" + m[2] + "/" + m[1] : (s || "");
+    }
+    function ve() {
+      var k = boDau(tu.trim());
+      var co = ds.filter(function (b) { return !k || boDau(b.tieuDe + " " + (b.tomTat || "")).indexOf(k) >= 0; });
+      var html = co.map(function (b) {
+        var ngoai = /^https?:/.test(b.link || "");
+        var mo = ngoai ? ' target="_blank" rel="noopener"' : "";
+        return '<article class="card post"><a class="pic" href="' + esc(b.link || "#") + '"' + mo + ">" +
+          (b.anh ? '<img src="' + esc(b.anh) + '" alt="' + esc(b.tieuDe) + '" loading="lazy">' : '<span class="post-no">M5</span>') + "</a>" +
+          '<div class="body"><span class="soft">' + esc(ngayDep(b.ngay)) + (b.nhan ? " · " + esc(b.nhan) : "") + "</span>" +
+          '<h3><a href="' + esc(b.link || "#") + '"' + mo + ">" + esc(b.tieuDe) + "</a></h3>" +
+          '<p class="desc">' + esc(b.tomTat || "") + "</p></div>" +
+          '<div class="foot"><span></span><a class="go" href="' + esc(b.link || "#") + '"' + mo + ">Đọc tiếp ↗</a></div></article>";
+      }).join("");
+      if (!ds.length) {
+        for (var i = 0; i < 3; i++) {
+          html += '<article class="card soon-card"><div class="pic">SẮP CÓ</div>' +
+            '<div class="body"><h3>Bài viết</h3><span class="price soon">Sắp có</span></div>' +
+            '<div class="foot"><span>M5 STUDIO</span></div></article>';
+        }
+      } else if (!co.length) {
+        html = '<div class="empty">Không có bài nào khớp.</div>';
+      }
+      $("#luoi").innerHTML = html;
+      $("#dem").textContent = co.length + " bài";
+    }
+    $("#tim").addEventListener("input", function (e) { tu = e.target.value; ve(); });
+    ve();
+  }
+
   /* ---------- Khởi động ---------- */
   var trang = document.body.getAttribute("data-page");
   dauTrang(trang);
@@ -336,5 +372,6 @@
   else if (trang === "plugin") trangPlugin();
   else if (trang === "chitiet") trangChiTiet();
   else if (trang === "thuvien") trangThuVien();
+  else if (trang === "baiviet") trangBaiViet();
   window.M5_ICON = ICON;
 })();
