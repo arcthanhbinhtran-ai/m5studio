@@ -1,0 +1,5 @@
+tools/video/xem_truoc.png
+tools/video/xt*.png
+tools/video/luoi*.png
+tools/video/__pycache__/
+tools/video/*.mp4
