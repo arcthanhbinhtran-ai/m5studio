@@ -34,7 +34,15 @@ def ma(so_tien):
     return p + crc16(p)
 
 
+# Ma chep nguyen tu app Vietcombank (My QR, kieu Gift) - giu dung loi nhan cua chu tai khoan.
+TU_APP = {
+    25000: "00020101021238570010A00000072701270006970436011305310025836030208QRIBFTTA53037045405250005802VN62360815donate 1ly cafe1013GIFT-TRANSFER63046382",
+    50000: "00020101021238570010A00000072701270006970436011305310025836030208QRIBFTTA53037045405500005802VN62360815donate 2ly cafe1013GIFT-TRANSFER630454BB",
+    100000: "00020101021238570010A00000072701270006970436011305310025836030208QRIBFTTA530370454061000005802VN62360815donate 4ly cafe1013GIFT-TRANSFER63045A6F",
+}
+
 for st in MUC:
     ten = "qr-ung-ho.png" if not st else "qr-ung-ho-%dk.png" % (st // 1000)
-    segno.make(ma(st), error="m").save(os.path.join(OUT, ten), scale=10, border=2)
-    print(ten, ma(st))
+    noi = TU_APP.get(st) or ma(st)
+    segno.make(noi, error="m").save(os.path.join(OUT, ten), scale=10, border=2)
+    print(ten, noi)

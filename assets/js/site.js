@@ -143,7 +143,7 @@
     if (!u) return "";
     var muc = u.mucTien || [];
     var nutMuc = muc.length ? '<div class="amounts">' + muc.map(function (m, i) {
-      return '<button data-qr="' + esc(m.maQR) + '"' + (i === 0 ? ' class="on"' : "") + ">" + esc(m.nhan) + "</button>";
+      return '<button data-qr="' + esc(m.maQR) + '" data-nd="' + esc(m.noiDung || u.noiDung) + '"' + (i === 0 ? ' class="on"' : "") + ">" + esc(m.nhan) + "</button>";
     }).join("") + "</div>" : "";
     return '<section class="panel donate"><div class="pad">' +
       "<h3>" + esc(u.tieuDe) + "</h3><p>" + esc(u.loiNhan) + "</p>" + nutMuc +
@@ -152,7 +152,7 @@
       '<div class="acct"><span>' + esc(u.nganHang) + "</span>" +
         '<span class="num">' + esc(u.soTaiKhoan) + '<button class="copy" data-chep="' + esc(u.soTaiKhoan) + '">Chép</button></span>' +
         "<span>Chủ tài khoản: <b>" + esc(u.chuTaiKhoan) + "</b></span>" +
-        "<span>Nội dung: <b>" + esc(u.noiDung) + "</b></span>" +
+        '<span>Nội dung: <b id="noiDung">' + esc(muc.length && muc[0].noiDung ? muc[0].noiDung : u.noiDung) + "</b></span>" +
       "</div></div></div></section>";
   }
 
@@ -226,6 +226,7 @@
         Array.prototype.forEach.call(nutTien, function (x) { x.classList.remove("on"); });
         b.classList.add("on");
         $("#maQR").src = b.getAttribute("data-qr");
+        $("#noiDung").textContent = b.getAttribute("data-nd");
       });
     });
     // Nút chép số tài khoản

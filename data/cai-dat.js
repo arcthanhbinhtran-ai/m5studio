@@ -14,10 +14,10 @@ window.M5_CAI_DAT = {
     // Các mức tiền có sẵn mã QR. Đổi mức thì chạy lại tools/tao-qr.py để tạo ảnh mới.
     // Mức đầu tiên được chọn sẵn. "Tự nhập" = mã không ghi sẵn số tiền.
     mucTien: [
-      { nhan: "25k", maQR: "assets/img/qr-ung-ho-25k.png" },
-      { nhan: "50k", maQR: "assets/img/qr-ung-ho-50k.png" },
-      { nhan: "100k", maQR: "assets/img/qr-ung-ho-100k.png" },
-      { nhan: "Tự nhập", maQR: "assets/img/qr-ung-ho.png" }
+      { nhan: "25k", maQR: "assets/img/qr-ung-ho-25k.png", noiDung: "donate 1ly cafe" },
+      { nhan: "50k", maQR: "assets/img/qr-ung-ho-50k.png", noiDung: "donate 2ly cafe" },
+      { nhan: "100k", maQR: "assets/img/qr-ung-ho-100k.png", noiDung: "donate 4ly cafe" },
+      { nhan: "Tự nhập", maQR: "assets/img/qr-ung-ho.png", noiDung: "UNG HO M5 STUDIO" }
     ]
   },
   // Link mạng xã hội ở chân trang. Để "" thì không hiện.
