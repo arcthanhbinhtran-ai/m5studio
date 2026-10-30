@@ -10,6 +10,7 @@
     tai: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>',
     tim: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>',
     menu: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>',
+    pdf: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h8l5 5v13H6z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>',
     video: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="5" width="19" height="14" rx="3"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"/></svg>',
     facebook: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v6h4v-6h3l.5-4h-3.5V8.8c0-.5.3-.8.5-.8z"/></svg>',
     youtube: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 8.2c-.2-1.6-1-2.6-2.6-2.8C17 5 12 5 12 5s-5 0-7.4.4C3 5.6 2.2 6.6 2 8.2 1.8 9.6 1.8 12 1.8 12s0 2.4.2 3.8c.2 1.6 1 2.6 2.6 2.8C7 19 12 19 12 19s5 0 7.4-.4c1.6-.2 2.4-1.2 2.6-2.8.2-1.4.2-3.8.2-3.8s0-2.4-.2-3.8zM10 15V9l5 3z"/></svg>',
@@ -196,6 +197,8 @@
           (p.yeuCau ? "<span>Dùng cho<b>" + esc(p.yeuCau) + "</b></span>" : "") +
         "</div>" +
         '<div class="actions">' + nutTai + '<a class="btn" href="plugin.html">Xem plugin khác</a></div>' +
+        (p.huongDan ? '<a class="btn guide" href="' + esc(p.huongDan) + '" target="_blank" rel="noopener">' +
+          ICON.pdf + "Hướng dẫn sử dụng (PDF)</a>" : "") +
         (taiDuoc ? '<p class="note" id="ghiChuTai">Tải về, giải nén, đóng AutoCAD rồi chạy <b>CaiDat.bat</b>.</p>' : "") +
         (p.tinhNang && p.tinhNang.length ? '<ul class="feat">' + p.tinhNang.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("") + "</ul>" : "") +
       "</div><div>" +

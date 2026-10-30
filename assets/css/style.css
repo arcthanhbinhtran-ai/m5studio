@@ -188,6 +188,8 @@ img { max-width: 100%; display: block; }
 .meta b.red { color: var(--accent); }
 .meta b.free { color: var(--green); }
 .detail .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
+.btn.guide { width: 100%; margin-bottom: 14px; }
+.btn.guide svg { color: var(--accent); }
 .note { font-size: 13px; color: var(--dim); }
 .feat { margin: 22px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; }
 .feat li { padding-left: 24px; position: relative; color: var(--lbl); }

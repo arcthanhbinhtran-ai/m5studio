@@ -22,6 +22,7 @@
     github     : (tuỳ chọn) kho GitHub dạng "tên-tài-khoản/tên-kho". Có ô này thì web tự lấy
                  bản mới nhất trên GitHub Releases: nút Tải tải thẳng file .zip, số phiên bản
                  tự cập nhật. Ô phienBan / taiVe chỉ dùng khi không đọc được GitHub.
+    huongDan   : (tuỳ chọn) file PDF hướng dẫn, đặt trong assets/docs/. Có thì hiện nút "Hướng dẫn (PDF)".
     tinhNang   : danh sách tính năng, mỗi dòng một chuỗi
     yeuCau     : phiên bản AutoCAD hỗ trợ
     deXuat     : true = gắn nhãn ĐỀ XUẤT trên thẻ
@@ -45,6 +46,7 @@ window.M5_PLUGINS = [
     video: "",
     taiVe: "https://github.com/arcthanhbinhtran-ai/m5-do-dac/releases/latest",
     github: "arcthanhbinhtran-ai/m5-do-dac",
+    huongDan: "assets/docs/M5DODAC_HuongDan.pdf",
     tinhNang: [
       "Tổng chiều dài polyline, line, cung tròn, spline, elip",
       "Diện tích hatch và polyline kín, ra m² hoặc ha",
