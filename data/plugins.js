@@ -19,6 +19,9 @@
     anhChup    : danh sách ảnh chụp giao diện ở trang chi tiết, mỗi ảnh { anh, chu }
     video      : link YouTube (dán nguyên link), để "" nếu chưa có
     taiVe      : link tải, để "" nếu chưa có
+    github     : (tuỳ chọn) kho GitHub dạng "tên-tài-khoản/tên-kho". Có ô này thì web tự lấy
+                 bản mới nhất trên GitHub Releases: nút Tải tải thẳng file .zip, số phiên bản
+                 tự cập nhật. Ô phienBan / taiVe chỉ dùng khi không đọc được GitHub.
     tinhNang   : danh sách tính năng, mỗi dòng một chuỗi
     yeuCau     : phiên bản AutoCAD hỗ trợ
     deXuat     : true = gắn nhãn ĐỀ XUẤT trên thẻ
@@ -31,7 +34,7 @@ window.M5_PLUGINS = [
     moTa: "Chọn đường hay vùng trên bản vẽ là có ngay tổng chiều dài, tổng diện tích, kèm bảng kết quả từng đối tượng và từng layer. Polyline hở được kẻ đỏ chỗ hở và hỏi tự đóng; vùng chồng lấn được tô đỏ và trừ khỏi tổng nếu muốn. Số tổng tự chép sẵn, Ctrl+V là dán vào Excel hay Word.",
     trangThai: "mien-phi",
     gia: "",
-    phienBan: "3.0",
+    phienBan: "2.6",
     luotTai: null,
     anh: "assets/img/m5dodac-dien-tich.png",
     anhChup: [
@@ -41,6 +44,7 @@ window.M5_PLUGINS = [
     ],
     video: "",
     taiVe: "https://github.com/arcthanhbinhtran-ai/m5-do-dac/releases/latest",
+    github: "arcthanhbinhtran-ai/m5-do-dac",
     tinhNang: [
       "Tổng chiều dài polyline, line, cung tròn, spline, elip",
       "Diện tích hatch và polyline kín, ra m² hoặc ha",

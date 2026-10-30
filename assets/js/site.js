@@ -172,7 +172,7 @@
       : '<b class="free">Tải miễn phí</b>';
     var taiDuoc = p.taiVe && p.trangThai !== "sap-ra-mat";
     var nutTai = taiDuoc
-      ? '<a class="btn main" href="' + esc(p.taiVe) + '" target="_blank" rel="noopener">' + ICON.tai.replace("<svg", '<svg width="18" height="18"') + "Tải " + esc(p.ten) + "</a>"
+      ? '<a class="btn main" id="nutTai" href="' + esc(p.taiVe) + '" target="_blank" rel="noopener">' + ICON.tai.replace("<svg", '<svg width="18" height="18"') + "Tải " + esc(p.ten) + "</a>"
       : '<span class="btn main off" title="Plugin này chưa phát hành">Sắp ra mắt</span>';
 
     var yt = maYoutube(p.video);
@@ -191,13 +191,12 @@
         '<p class="lead">' + esc(p.moTa) + "</p>" +
         '<div class="meta">' +
           (p.luotTai != null ? "<span>Lượt tải<b class=\"red\">" + soDep(p.luotTai) + "</b></span>" : "") +
-          (p.phienBan ? "<span>Phiên bản<b>v" + esc(p.phienBan) + "</b></span>" : "") +
+          (p.phienBan || p.github ? "<span>Phiên bản<b id=\"phienBan\">" + (p.phienBan ? "v" + esc(p.phienBan) : "…") + "</b></span>" : "") +
           "<span>Giá" + giaHien + "</span>" +
           (p.yeuCau ? "<span>Dùng cho<b>" + esc(p.yeuCau) + "</b></span>" : "") +
         "</div>" +
         '<div class="actions">' + nutTai + '<a class="btn" href="plugin.html">Xem plugin khác</a></div>' +
-        (taiDuoc && /github\.com/.test(p.taiVe)
-          ? '<p class="note">Bấm Tải sẽ mở trang GitHub. Kéo xuống mục <b>Assets</b>, bấm file <b>.zip</b> để tải, giải nén rồi chạy <b>CaiDat.bat</b>.</p>' : "") +
+        (taiDuoc ? '<p class="note" id="ghiChuTai">Tải về, giải nén, đóng AutoCAD rồi chạy <b>CaiDat.bat</b>.</p>' : "") +
         (p.tinhNang && p.tinhNang.length ? '<ul class="feat">' + p.tinhNang.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("") + "</ul>" : "") +
       "</div><div>" +
         '<section class="panel">' + video + "</section>" +
@@ -209,6 +208,26 @@
             return '<figure class="shot"><img src="' + esc(a.anh) + '" alt="' + esc(a.chu) + '" loading="lazy"><figcaption>' + esc(a.chu) + "</figcaption></figure>";
           }).join("") + "</div></section>"
         : "");
+
+    // Bản mới nhất trên GitHub Releases: nút Tải trỏ thẳng file .zip, số phiên bản theo GitHub.
+    // Không đọc được (mất mạng, GitHub chặn) thì giữ link trang phát hành trong taiVe.
+    if (p.github && taiDuoc && window.fetch) {
+      fetch("https://api.github.com/repos/" + p.github + "/releases/latest")
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (d) {
+          if (!d) return;
+          var zip = (d.assets || []).filter(function (a) { return /\.zip$/i.test(a.name); })[0];
+          if (zip) {
+            var nut = $("#nutTai");
+            nut.href = zip.browser_download_url;
+            nut.removeAttribute("target");
+            nut.title = "Tải " + zip.name + " (" + Math.round(zip.size / 1024) + " KB)";
+          }
+          var pb = $("#phienBan");
+          if (pb && d.tag_name) pb.textContent = d.tag_name.replace(/^V/, "v");
+        })
+        .catch(function () {});
+    }
 
     // Phóng to ảnh chụp
     var lb = document.createElement("div");
