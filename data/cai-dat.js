@@ -22,7 +22,7 @@ window.M5_CAI_DAT = {
   },
   // Link mạng xã hội ở chân trang. Để "" thì không hiện.
   lienHe: {
-    facebook: "",
+    facebook: "https://www.facebook.com/M5Studiovn",
     youtube: "",
     zalo: "",
     github: "https://github.com/arcthanhbinhtran-ai"
