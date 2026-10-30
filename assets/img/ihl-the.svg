@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#202023"/>
+  <g stroke-linejoin="round">
+    <path d="M150 46 H232 L262 76 V214 H150 Z" fill="#EEEEF0"/>
+    <path d="M232 46 V76 H262" fill="#C6C6CA"/>
+    <rect x="166" y="92" width="80" height="54" fill="none" stroke="#84848A" stroke-width="3"/>
+    <rect x="166" y="156" width="52" height="5" fill="#84848A"/>
+    <rect x="166" y="167" width="36" height="5" fill="#84848A"/>
+    <rect x="130" y="176" width="78" height="40" rx="6" fill="#D63A34"/>
+    <text x="169" y="204" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800" fill="#FFFFFF">PDF</text>
+    <path d="M284 110 V170 M266 152 L284 172 L302 152" fill="none" stroke="#D63A34" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <text x="200" y="262" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="800" fill="#EEEEF0" letter-spacing="6">IHL</text>
+</svg>

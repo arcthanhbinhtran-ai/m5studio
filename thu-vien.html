@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thư viện — M5 STUDIO</title>
+  <meta name="description" content="Thư viện vật liệu, model 3D và block CAD của M5 STUDIO.">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="thuvien">
+<main class="wrap">
+  <div class="page-top">
+    <div>
+      <h1>M5 Library</h1>
+      <p>Vật liệu, model 3D và block CAD dùng chung — đang chuẩn bị, sẽ cập nhật dần.</p>
+    </div>
+  </div>
+
+  <div class="toolbar">
+    <div class="seg" id="nhom" role="group" aria-label="Nhóm thư viện"></div>
+    <label class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+      <input id="tim" type="search" placeholder="Tìm trong thư viện…" aria-label="Tìm trong thư viện">
+    </label>
+    <span class="count" id="dem"></span>
+  </div>
+
+  <div class="grid" id="luoi"></div>
+</main>
+<script src="data/cai-dat.js"></script>
+<script src="data/thu-vien.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>

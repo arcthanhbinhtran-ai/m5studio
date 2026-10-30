@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plugin AutoCAD — M5 STUDIO</title>
+  <meta name="description" content="Danh sách plugin AutoCAD của M5 STUDIO.">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="plugin">
+<main class="wrap">
+  <div class="page-top">
+    <div>
+      <h1>Plugin AutoCAD</h1>
+      <p>Bấm vào thẻ để xem chi tiết, ảnh chụp và tải về.</p>
+    </div>
+    <div class="stats">
+      <span hidden id="oTongTai"><b id="tongTai">0</b>lượt tải</span>
+      <span><b id="tongPlugin">0</b>plugin</span>
+    </div>
+  </div>
+
+  <div class="toolbar">
+    <div class="seg" id="loc" role="group" aria-label="Lọc plugin">
+      <button class="on" data-loc="tat-ca">Tất cả</button>
+      <button data-loc="mien-phi">Miễn phí</button>
+      <button data-loc="pro">Pro</button>
+      <button data-loc="sap-ra-mat">Sắp ra mắt</button>
+    </div>
+    <label class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+      <input id="tim" type="search" placeholder="Tìm plugin…" aria-label="Tìm plugin">
+    </label>
+    <span class="count" id="dem"></span>
+  </div>
+
+  <div class="grid" id="luoi"></div>
+</main>
+<script src="data/cai-dat.js"></script>
+<script src="data/plugins.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>
