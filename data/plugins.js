@@ -96,21 +96,31 @@ window.M5_PLUGINS = [
   {
     id: "ihl",
     ten: "IHL",
-    moTaNgan: "In PDF hàng loạt theo khung bản vẽ — miễn phí cho sinh viên quy hoạch.",
-    moTa: "Tự tìm các khung bản vẽ trong Model và in ra PDF hàng loạt, gộp một file hoặc tách từng file. Bản 10.0 miễn phí cho sinh viên khoa quy hoạch.",
+    moTaNgan: "In PDF hàng loạt theo khung bản vẽ hoặc theo từng tab Layout — miễn phí cho sinh viên quy hoạch.",
+    moTa: "Tự tìm các khung bản vẽ trong Model (hoặc từng tab Layout) và in ra PDF hàng loạt, gộp một file hoặc tách từng file, đặt tên theo bản vẽ. Có bảng In nâng cao để chọn đúng khung cần in, nhớ cách in của từng bản vẽ, tự soát trang in ra có trắng không. Miễn phí cho sinh viên khoa quy hoạch.",
     phanMem: "AutoCAD",
-    trangThai: "sap-ra-mat",
+    trangThai: "mien-phi",
     gia: "",
-    phienBan: "10.0",
+    phienBan: "9.9",
     luotTai: null,
-    anh: "assets/img/ihl-the.svg",
-    anhChup: [],
+    anh: "assets/img/ihl-bang.png",
+    anhChup: [
+      { anh: "assets/img/ihl-bang.png", chu: "Bảng IHL: 4 bước — thiết lập in, khung in, xuất file, danh sách khung" },
+      { anh: "assets/img/ihl-layout.png", chu: "In theo từng tab Layout: tích chọn layout cần in" },
+      { anh: "assets/img/ihl-nang-cao.png", chu: "In nâng cao: sơ đồ khung trên bản vẽ, bấm để bỏ / lấy lại" },
+      { anh: "assets/img/ihl-cap-nhat.png", chu: "Tự kiểm tra và tải bản mới" }
+    ],
     video: "",
-    taiVe: "",
+    taiVe: "https://github.com/arcthanhbinhtran-ai/ihl/releases/latest",
+    github: "arcthanhbinhtran-ai/ihl",
+    huongDan: "assets/docs/IHL_HuongDan.pdf",
     tinhNang: [
       "Tự nhận khung bản vẽ theo block",
+      "In theo khung trong Model hoặc theo từng tab Layout",
       "In PDF gộp một file hoặc tách từng khung",
-      "Nhớ cách in của từng bản vẽ"
+      "Nhớ cách in của từng bản vẽ",
+      "Tự soát trang in ra bị trắng",
+      "Tự kiểm tra bản mới"
     ],
     yeuCau: "AutoCAD 2018 – 2027",
     deXuat: false
