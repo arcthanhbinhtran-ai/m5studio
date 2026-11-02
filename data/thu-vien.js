@@ -21,4 +21,13 @@ window.M5_THU_VIEN_NHOM = [
 ];
 
 window.M5_THU_VIEN = [
+  {
+    ten: "VOL 02 — Bộ cây ăn trái (M5_LIB_TREE_FRUIT)",
+    nhom: "model-3d",
+    loai: "Cây ăn trái · SketchUp",
+    anh: "assets/img/thu-vien/cay-an-trai-vol02.svg",
+    taiVe: "https://drive.google.com/file/d/1_vTpUwBz28fBTe_uXeD8_YvRltH2B-jT/view",
+    mienPhi: true,
+    luotTai: null
+  }
 ];
