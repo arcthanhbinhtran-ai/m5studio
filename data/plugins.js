@@ -46,7 +46,7 @@ window.M5_PLUGINS = [
       { anh: "assets/img/m5dodac-dien-tich.png", chu: "Bảng kết quả diện tích, có trừ chồng lấn" },
       { anh: "assets/img/m5dodac-chua-kin.png", chu: "Phát hiện polyline chưa đóng kín" }
     ],
-    video: "",
+    video: "https://youtu.be/KkD2ICXNS90",
     taiVe: "https://github.com/arcthanhbinhtran-ai/m5-do-dac/releases/latest",
     github: "arcthanhbinhtran-ai/m5-do-dac",
     huongDan: "assets/docs/M5DODAC_HuongDan.pdf",
