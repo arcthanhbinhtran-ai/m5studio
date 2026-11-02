@@ -23,7 +23,7 @@ window.M5_CAI_DAT = {
   // Bộ đếm lượt xem GoatCounter: điền mã trang (phần đầu của địa chỉ <mã>.goatcounter.com).
   // Để "" thì web không đếm gì. Xem số liệu tại https://<mã>.goatcounter.com
   thongKe: {
-    goatcounter: "",
+    goatcounter: "m5studio",
     demCaMayNha: false      // true = đếm cả khi mở web ngay trên máy (localhost), chỉ dùng lúc thử
   },
   // Link mạng xã hội ở chân trang. Để "" thì không hiện.
