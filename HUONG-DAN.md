@@ -18,6 +18,11 @@ Trạng thái giá (`trangThai`): `"mien-phi"`, `"pro"` (ghi giá ở ô `gia`),
 
 Sửa `data/cai-dat.js`. Mã QR là ảnh `assets/img/qr-ung-ho.png`.
 
+## Bộ đếm lượt xem
+
+Điền mã GoatCounter vào `thongKe.goatcounter` trong `data/cai-dat.js`. Xem số liệu tại `https://<mã>.goatcounter.com`.
+Trang chi tiết đếm riêng từng plugin (`/plugin/m5-do-dac`...). Lượt bấm hiện thành `bam-tai/...`, `bam-huong-dan/...`, `mo-link/...`.
+
 ## Thư viện (vật liệu, model, block)
 
 Sửa `data/thu-vien.js` — trong file có sẵn mẫu.

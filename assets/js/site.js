@@ -364,6 +364,40 @@
     ve();
   }
 
+  /* ---------- Bộ đếm lượt xem (GoatCounter, không dùng cookie) ---------- */
+  // Mã lấy ở data/cai-dat.js (thongKe.goatcounter). Để trống thì không đếm gì.
+  function boDem(trang) {
+    var tk = CAI_DAT.thongKe || {};
+    var ma = tk.goatcounter;
+    if (!ma) return;
+    var id = new URLSearchParams(location.search).get("id");
+    window.goatcounter = {
+      // trang chi tiết đếm riêng từng plugin: /plugin/m5-do-dac, /plugin/alo...
+      path: function (p) { return trang === "chitiet" && id ? "/plugin/" + id : p; },
+      allow_local: !!tk.demCaMayNha
+    };
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://gc.zgo.at/count.js";
+    s.setAttribute("data-goatcounter", "https://" + ma + ".goatcounter.com/count");
+    document.body.appendChild(s);
+
+    // Đếm lượt bấm: tải plugin, xem hướng dẫn PDF, mở GitHub / Facebook...
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest ? e.target.closest("a") : null;
+      if (!a || !a.href) return;
+      var ten = "";
+      if (a.id === "nutTai") ten = "bam-tai/" + (id || "");
+      else if (/\.pdf($|\?)/i.test(a.href)) ten = "bam-huong-dan/" + (id || "");
+      else if (a.hostname && a.hostname !== location.hostname) ten = "mo-link/" + a.hostname.replace(/^www\./, "");
+      if (!ten) return;
+      try {
+        if (window.goatcounter && window.goatcounter.count)
+          window.goatcounter.count({ path: ten, title: a.textContent.trim().slice(0, 80), event: true });
+      } catch (loi) {}
+    }, true);
+  }
+
   /* ---------- Khởi động ---------- */
   var trang = document.body.getAttribute("data-page");
   dauTrang(trang);
@@ -373,5 +407,6 @@
   else if (trang === "chitiet") trangChiTiet();
   else if (trang === "thuvien") trangThuVien();
   else if (trang === "baiviet") trangBaiViet();
+  boDem(trang);
   window.M5_ICON = ICON;
 })();

@@ -20,6 +20,12 @@ window.M5_CAI_DAT = {
       { nhan: "Tự nhập", maQR: "assets/img/qr-ung-ho.png", noiDung: "UNG HO M5 STUDIO" }
     ]
   },
+  // Bộ đếm lượt xem GoatCounter: điền mã trang (phần đầu của địa chỉ <mã>.goatcounter.com).
+  // Để "" thì web không đếm gì. Xem số liệu tại https://<mã>.goatcounter.com
+  thongKe: {
+    goatcounter: "",
+    demCaMayNha: false      // true = đếm cả khi mở web ngay trên máy (localhost), chỉ dùng lúc thử
+  },
   // Link mạng xã hội ở chân trang. Để "" thì không hiện.
   lienHe: {
     facebook: "https://www.facebook.com/M5Studiovn",
