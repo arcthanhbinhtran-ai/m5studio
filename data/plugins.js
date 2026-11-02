@@ -71,11 +71,17 @@ window.M5_PLUGINS = [
     gia: "",
     phienBan: "8.9",
     luotTai: null,
-    anh: "assets/img/alo-the.svg",
-    anhChup: [],
+    anh: "assets/img/alo-bo-ban-ve.png",
+    anhChup: [
+      { anh: "assets/img/alo-bo-ban-ve.png", chu: "Bảng bộ bản vẽ: số hiệu, tên, tỉ lệ, ngày, chia nhóm" },
+      { anh: "assets/img/alo-sheet-set.png", chu: "Tab Sheet set: sửa hàng loạt file .dst, Excel, in PDF cả bộ" },
+      { anh: "assets/img/alo-khung-ten.png", chu: "Tab Khung tên: đặt khung tên, ghi giá trị, gán field" },
+      { anh: "assets/img/alo-cap-nhat.png", chu: "Tự kiểm tra và tải bản mới" }
+    ],
     video: "",
     taiVe: "https://github.com/arcthanhbinhtran-ai/alo/releases/latest",
     github: "arcthanhbinhtran-ai/alo",
+    huongDan: "assets/docs/ALO_HuongDan.pdf",
     tinhNang: [
       "Tạo layout hàng loạt từ khung bản vẽ trong Model",
       "Bộ bản vẽ: đánh số, chia nhóm, ghi xuống bản vẽ",
