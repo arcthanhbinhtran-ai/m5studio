@@ -67,20 +67,22 @@ window.M5_PLUGINS = [
     moTaNgan: "Tạo layout hàng loạt, bộ bản vẽ, field khung tên, sheet set và in PDF cả bộ.",
     moTa: "Dành cho người dựng hồ sơ nhiều bản vẽ: quét khung trong Model và tạo layout hàng loạt, quản lý bộ bản vẽ (số hiệu, tên, tỉ lệ, ngày), gán field khung tên để sửa một chỗ là mọi bản vẽ theo, đọc / sửa / thêm bản vẽ vào sheet set (.dst), xuất nhập Excel và in PDF cả bộ có mục lục theo nhóm.",
     phanMem: "AutoCAD",
-    trangThai: "sap-ra-mat",
+    trangThai: "mien-phi",
     gia: "",
-    phienBan: "",
+    phienBan: "8.9",
     luotTai: null,
     anh: "assets/img/alo-the.svg",
     anhChup: [],
     video: "",
-    taiVe: "",
+    taiVe: "https://github.com/arcthanhbinhtran-ai/alo/releases/latest",
+    github: "arcthanhbinhtran-ai/alo",
     tinhNang: [
       "Tạo layout hàng loạt từ khung bản vẽ trong Model",
       "Bộ bản vẽ: đánh số, chia nhóm, ghi xuống bản vẽ",
       "Gán field Sheet Set vào khung tên",
       "Tạo, đọc, sửa file sheet set (.dst), vòng Excel",
-      "In PDF cả bộ, mục lục theo nhóm"
+      "In PDF cả bộ, mục lục theo nhóm",
+      "Tự kiểm tra bản mới"
     ],
     yeuCau: "AutoCAD 2015 – 2027",
     deXuat: false
