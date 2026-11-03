@@ -22,6 +22,15 @@ window.M5_THU_VIEN_NHOM = [
 
 window.M5_THU_VIEN = [
   {
+    ten: "VOL 01 — Bộ cây cọ tropical (M5_LIB_TREE_PALM)",
+    nhom: "model-3d",
+    loai: "Cây cọ · SketchUp",
+    anh: "assets/img/thu-vien/cay-co-vol01.svg",
+    taiVe: "https://drive.google.com/file/d/10cFpBx-zDriIhSuvv8xxHaTj0xMx0dlI/view",
+    mienPhi: true,
+    luotTai: null
+  },
+  {
     ten: "VOL 02 — Bộ cây ăn trái (M5_LIB_TREE_FRUIT)",
     nhom: "model-3d",
     loai: "Cây ăn trái · SketchUp",
