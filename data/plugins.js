@@ -38,7 +38,7 @@ window.M5_PLUGINS = [
     phanMem: "AutoCAD",
     trangThai: "mien-phi",
     gia: "",
-    phienBan: "3.3",
+    phienBan: "3.8",
     luotTai: null,
     anh: "assets/img/m5dodac-dien-tich.png",
     anhChup: [
