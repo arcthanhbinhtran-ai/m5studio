@@ -237,17 +237,15 @@
         .then(function (r) { return r.ok ? r.json() : null; })
         .then(function (d) {
           if (!d) return;
-          // Có file bộ cài một file (.exe) thì ưu tiên: bấm đúp là cài, khỏi giải nén
-          var exe = (d.assets || []).filter(function (a) { return /\.exe$/i.test(a.name); })[0];
-          var zip = exe || (d.assets || []).filter(function (a) { return /\.zip$/i.test(a.name); })[0];
-          if (exe) {
-            var gc = $("#ghiChuTai");
-            // Bộ cài chưa có chữ ký số: trình duyệt và Windows sẽ cảnh báo, chỉ cách qua
-            if (gc) gc.innerHTML = "Tải về rồi <b>bấm đúp file .exe</b> để cài (đóng AutoCAD trước).<br>" +
-              "• Trình duyệt báo “isn't commonly downloaded”: bấm dấu <b>…</b> cạnh file → <b>Keep</b> (Giữ lại), hỏi tiếp thì chọn <b>Keep anyway</b>.<br>" +
-              "• Windows hiện khung xanh “Windows protected your PC”: bấm <b>More info → Run anyway</b>.<br>" +
-              "File an toàn — cảnh báo hiện vì bộ cài chưa có chữ ký số và còn ít người tải.";
-          }
+          // Luôn tải file .zip: trình duyệt / Windows hay chặn file .exe tải thẳng về.
+          // Bộ cài .exe nằm SẴN trong zip (giải nén rồi bấm đúp).
+          var zip = (d.assets || []).filter(function (a) { return /\.zip$/i.test(a.name); })[0];
+          var gc = $("#ghiChuTai");
+          // Bộ cài chưa có chữ ký số: Windows có thể cảnh báo, chỉ cách qua
+          if (gc && zip) gc.innerHTML = "Tải về, <b>giải nén</b>, đóng AutoCAD rồi <b>bấm đúp file _CaiDat.exe</b> trong thư mục vừa giải nén " +
+            "(bản nào chưa có file .exe thì chạy <b>CaiDat.bat</b>).<br>" +
+            "• Windows hiện khung xanh “Windows protected your PC”: bấm <b>More info → Run anyway</b>.<br>" +
+            "File an toàn — cảnh báo hiện vì bộ cài chưa có chữ ký số và còn ít người tải.";
           if (zip) {
             var nut = $("#nutTai");
             nut.href = zip.browser_download_url;
