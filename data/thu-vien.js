@@ -25,7 +25,7 @@ window.M5_THU_VIEN = [
     ten: "VOL 01 — Bộ cây cọ tropical (M5_LIB_TREE_PALM)",
     nhom: "model-3d",
     loai: "Cây cọ · SketchUp",
-    anh: "assets/img/thu-vien/cay-co-vol01.svg",
+    anh: "assets/img/thu-vien/cay-co-vol01.jpg",
     taiVe: "https://drive.google.com/file/d/10cFpBx-zDriIhSuvv8xxHaTj0xMx0dlI/view",
     mienPhi: true,
     luotTai: null
