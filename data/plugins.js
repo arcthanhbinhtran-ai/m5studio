@@ -69,7 +69,7 @@ window.M5_PLUGINS = [
     phanMem: "AutoCAD",
     trangThai: "mien-phi",
     gia: "",
-    phienBan: "8.9",
+    phienBan: "1.1",
     luotTai: null,
     anh: "assets/img/alo-bo-ban-ve.png",
     anhChup: [
