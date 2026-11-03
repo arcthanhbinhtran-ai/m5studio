@@ -17,8 +17,14 @@ window.M5_CAI_DAT = {
       { nhan: "25k", maQR: "assets/img/qr-ung-ho-25k.png", noiDung: "donate 1ly cafe" },
       { nhan: "50k", maQR: "assets/img/qr-ung-ho-50k.png", noiDung: "donate 2ly cafe" },
       { nhan: "100k", maQR: "assets/img/qr-ung-ho-100k.png", noiDung: "donate 4ly cafe" },
-      { nhan: "Tự nhập", maQR: "assets/img/qr-ung-ho.png", noiDung: "UNG HO M5 STUDIO" }
-    ]
+      { nhan: "Tự nhập", maQR: "assets/img/qr-ung-ho.png", noiDung: "UNG HO M5 STUDIO", en: { nhan: "Custom" } }
+    ],
+    // Bản tiếng Anh (khi người xem chọn EN)
+    en: {
+      tieuDe: "Buy me a coffee",
+      loiNhan: "All M5 STUDIO plugins are built in my spare time. Every bit of support gives me more time to fix bugs and make more free tools for drafters.",
+      ghiChu: "This QR code works with Vietnamese banking apps. International options (PayPal / Ko-fi) are coming soon."
+    }
   },
   // Bộ đếm lượt xem GoatCounter: điền mã trang (phần đầu của địa chỉ <mã>.goatcounter.com).
   // Để "" thì web không đếm gì. Xem số liệu tại https://<mã>.goatcounter.com

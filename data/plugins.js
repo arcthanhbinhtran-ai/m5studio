@@ -28,6 +28,9 @@
     tinhNang   : danh sách tính năng, mỗi dòng một chuỗi
     yeuCau     : phiên bản AutoCAD hỗ trợ
     deXuat     : true = gắn nhãn ĐỀ XUẤT trên thẻ
+    en         : (tuỳ chọn) bản tiếng Anh, hiện khi người xem chọn EN: moTaNgan, moTa, tinhNang,
+                 yeuCau, anhChup (danh sách chú thích ảnh, đúng thứ tự), giaoDien (dòng nói
+                 giao diện plugin là tiếng gì). Ô nào thiếu thì web dùng bản tiếng Việt.
 */
 window.M5_PLUGINS = [
   {
@@ -61,7 +64,27 @@ window.M5_PLUGINS = [
       "Tự kiểm tra bản mới"
     ],
     yeuCau: "AutoCAD 2015 – 2027",
-    deXuat: true
+    deXuat: true,
+    en: {
+      moTaNgan: "Total lengths and areas of hatches / closed polylines, with overlap checking.",
+      moTa: "Select lines or areas in your drawing and instantly get the total length and total area, with a result table per object and per layer. Open polylines get a red mark at the gap and an offer to close them; overlapping areas are shaded red and can be subtracted from the total. The total is copied for you — just Ctrl+V into Excel or Word.",
+      anhChup: [
+        "Total length result table",
+        "Area result table, with overlaps subtracted",
+        "Finds polylines that are not closed"
+      ],
+      tinhNang: [
+        "Total length of polylines, lines, arcs, splines, ellipses",
+        "Area of hatches and closed polylines, in m² or ha",
+        "Find and subtract overlaps, shaded red",
+        "Red marks on gaps of open polylines, close them if you want",
+        "Convert splines / ellipses to polylines, smooth polylines",
+        "Divide a path evenly: points, split pieces or blocks (rotate, mirror)",
+        "Replace blocks, rename, change base point, toggle Annotative without the Block Editor",
+        "Built-in update check"
+      ],
+      giaoDien: "Interface language: Vietnamese for now (an English interface is planned). Installer, updates and results work the same for everyone."
+    }
   },
   {
     id: "alo",
@@ -93,7 +116,26 @@ window.M5_PLUGINS = [
       "Tự kiểm tra bản mới"
     ],
     yeuCau: "AutoCAD 2015 – 2027",
-    deXuat: false
+    deXuat: false,
+    en: {
+      moTaNgan: "Batch layouts, drawing sets, title block fields, sheet sets and whole-set PDF printing.",
+      moTa: "For anyone producing multi-sheet drawing sets: scan the frames in Model space and create layouts in bulk, manage the drawing list (number, title, scale, date), link title block attributes to Sheet Set fields so one edit updates every sheet, read / edit / add sheets to real Sheet Set Manager files (.dst), round-trip with Excel, and print the whole set to one PDF with group bookmarks.",
+      tinhNang: [
+        "Create layouts in bulk from drawing frames in Model space",
+        "Drawing list: numbering, grouping, write back to the drawing",
+        "Link title blocks to Sheet Set fields",
+        "Create, read and edit sheet set files (.dst), Excel round-trip",
+        "Print the whole set to PDF with bookmarks per group",
+        "Built-in update check"
+      ],
+      anhChup: [
+        "Drawing list: number, title, scale, date, groups",
+        "Sheet set tab: bulk-edit .dst files, Excel, whole-set PDF",
+        "Title block tab: place title blocks, fill values, link fields",
+        "Checks for and downloads new versions"
+      ],
+      giaoDien: "Interface language: Vietnamese for now (an English interface is planned). Installer, updates and results work the same for everyone."
+    }
   },
   {
     id: "ihl",
@@ -125,6 +167,25 @@ window.M5_PLUGINS = [
       "Tự kiểm tra bản mới"
     ],
     yeuCau: "AutoCAD 2018 – 2027",
-    deXuat: false
+    deXuat: false,
+    en: {
+      moTaNgan: "Batch PDF printing by drawing frame or by layout tab — free for planning students.",
+      moTa: "Finds the drawing frames in Model space (or every Layout tab) and prints them to PDF in one go — one combined file or one file per sheet, named after each drawing. An advanced print panel lets you pick exactly which frames to print, remembers the print settings of each drawing and checks whether any printed page came out blank. Free for urban planning students.",
+      tinhNang: [
+        "Detects drawing frames by block",
+        "Print by frames in Model space or by Layout tab",
+        "One combined PDF or one file per frame",
+        "Remembers print settings per drawing",
+        "Warns about blank printed pages",
+        "Built-in update check"
+      ],
+      anhChup: [
+        "IHL panel: 4 steps — print setup, frames, output, frame list",
+        "Print by Layout tab: tick the layouts to print",
+        "Advanced printing: frame map on the drawing, click to skip / add back",
+        "Checks for and downloads new versions"
+      ],
+      giaoDien: "Interface language: Vietnamese for now (an English interface is planned). Installer, updates and results work the same for everyone."
+    }
   }
 ];

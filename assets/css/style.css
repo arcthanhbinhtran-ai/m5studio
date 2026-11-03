@@ -56,6 +56,11 @@ img { max-width: 100%; display: block; }
 .nav a:hover { color: var(--txt); background: var(--bg2); }
 .nav a.on { color: var(--txt); background: var(--bg2); box-shadow: inset 0 -2px 0 var(--accent); }
 .menu-btn { display: none; }
+.lang-sw { display: flex; margin-left: auto; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.lang-sw a { padding: 6px 10px; font-size: 13px; font-weight: 700; color: var(--dim); text-decoration: none; }
+.lang-sw a:hover { color: var(--txt); background: var(--bg2); }
+.lang-sw a.on { color: var(--txt); background: var(--accent); }
+.lang-note { margin-top: -6px; }
 
 /* ---------- Nút ---------- */
 .btn {
@@ -275,6 +280,7 @@ img { max-width: 100%; display: block; }
     background: var(--bg2); border: 1px solid var(--line); border-radius: 10px; color: var(--txt); cursor: pointer;
   }
   .menu-btn svg { width: 20px; height: 20px; }
+  .lang-sw + .menu-btn { margin-left: 0; }
   .nav {
     display: none; position: absolute; top: 60px; left: 0; right: 0; margin: 0;
     flex-direction: column; background: #101012; border-bottom: 1px solid var(--bg2); padding: 10px 16px 16px;
