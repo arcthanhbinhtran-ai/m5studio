@@ -242,7 +242,11 @@
           var zip = exe || (d.assets || []).filter(function (a) { return /\.zip$/i.test(a.name); })[0];
           if (exe) {
             var gc = $("#ghiChuTai");
-            if (gc) gc.innerHTML = "Tải về rồi <b>bấm đúp file .exe</b> để cài (đóng AutoCAD trước). Nếu Windows hiện khung xanh “Windows protected your PC” thì bấm <b>More info → Run anyway</b>.";
+            // Bộ cài chưa có chữ ký số: trình duyệt và Windows sẽ cảnh báo, chỉ cách qua
+            if (gc) gc.innerHTML = "Tải về rồi <b>bấm đúp file .exe</b> để cài (đóng AutoCAD trước).<br>" +
+              "• Trình duyệt báo “isn't commonly downloaded”: bấm dấu <b>…</b> cạnh file → <b>Keep</b> (Giữ lại), hỏi tiếp thì chọn <b>Keep anyway</b>.<br>" +
+              "• Windows hiện khung xanh “Windows protected your PC”: bấm <b>More info → Run anyway</b>.<br>" +
+              "File an toàn — cảnh báo hiện vì bộ cài chưa có chữ ký số và còn ít người tải.";
           }
           if (zip) {
             var nut = $("#nutTai");
