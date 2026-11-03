@@ -38,7 +38,7 @@ window.M5_PLUGINS = [
     phanMem: "AutoCAD",
     trangThai: "mien-phi",
     gia: "",
-    phienBan: "3.8",
+    phienBan: "3.9",
     luotTai: null,
     anh: "assets/img/m5dodac-dien-tich.png",
     anhChup: [
@@ -56,6 +56,8 @@ window.M5_PLUGINS = [
       "Soát và trừ phần chồng lấn, tô đỏ chỗ trùng",
       "Kẻ đỏ chỗ hở của polyline chưa kín, tự đóng nếu muốn",
       "Chuyển spline / elip sang polyline, làm mượt polyline",
+      "Chia đều đường: đặt điểm, cắt rời, chèn block (xoay, lật)",
+      "Thay block, đổi tên block, bật Annotative khỏi mở Block Editor",
       "Tự kiểm tra bản mới"
     ],
     yeuCau: "AutoCAD 2015 – 2027",
