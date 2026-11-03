@@ -13,7 +13,7 @@
   });
 
   /* ---------- Ngôn ngữ: tiếng Việt / English ----------
-     ?lang=vi|en trên địa chỉ > lựa chọn đã nhớ > tự đoán: máy đặt giờ Việt Nam hoặc trình duyệt
+     ?lang=vi|en trên địa chỉ > lựa chọn đã nhớ > tự đoán: máy đặt giờ +7 hoặc trình duyệt
      tiếng Việt thì tiếng Việt, còn lại English. Bản tiếng Anh của dữ liệu nằm trong ô en: { ... }
      (data/plugins.js...), của chữ trong HTML nằm ở thuộc tính data-en. Thiếu thì dùng tiếng Việt. */
   var LANG = (function () {
@@ -21,10 +21,10 @@
     try { nho = localStorage.getItem("m5lang"); } catch (e) {}
     var l = q || nho;
     if (!l) {
-      var tz = "";
-      try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ""; } catch (e) {}
+      // Windows ở Việt Nam hay đặt múi "Bangkok, Hà Nội" (Asia/Bangkok) nên xét giờ +7, không xét tên múi
+      var gioVN = new Date().getTimezoneOffset() === -420;
       var ngu = (navigator.languages || [navigator.language || ""]).join(",").toLowerCase();
-      l = /Ho_Chi_Minh|Saigon/.test(tz) || /(^|,)vi/.test(ngu) ? "vi" : "en";
+      l = gioVN || /(^|,)vi/.test(ngu) ? "vi" : "en";
     }
     l = l === "en" ? "en" : "vi";
     if (q) { try { localStorage.setItem("m5lang", l); } catch (e) {} }

@@ -16,7 +16,7 @@ Trạng thái giá (`trangThai`): `"mien-phi"`, `"pro"` (ghi giá ở ô `gia`),
 
 ## Bản tiếng Anh
 
-Web có nút **VI / EN** ở đầu trang. Người xem ở Việt Nam (hoặc trình duyệt tiếng Việt) tự thấy tiếng Việt,
+Web có nút **VI / EN** ở đầu trang. Máy đặt giờ Việt Nam +7 (hoặc trình duyệt tiếng Việt) tự thấy tiếng Việt,
 người ở nước ngoài tự thấy tiếng Anh. Link chia sẻ cho người nước ngoài: thêm `?lang=en`, ví dụ
 `https://arcthanhbinhtran-ai.github.io/m5studio/chi-tiet.html?id=m5-do-dac&lang=en`.
 
