@@ -29,7 +29,7 @@ window.M5_CAI_DAT = {
   // Link mạng xã hội ở chân trang. Để "" thì không hiện.
   lienHe: {
     facebook: "https://www.facebook.com/M5Studiovn",
-    youtube: "",
+    youtube: "https://www.youtube.com/@BinhTran-sb7di",
     zalo: "",
     github: "https://github.com/arcthanhbinhtran-ai"
   }
