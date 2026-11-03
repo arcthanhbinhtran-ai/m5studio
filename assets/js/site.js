@@ -237,7 +237,13 @@
         .then(function (r) { return r.ok ? r.json() : null; })
         .then(function (d) {
           if (!d) return;
-          var zip = (d.assets || []).filter(function (a) { return /\.zip$/i.test(a.name); })[0];
+          // Có file bộ cài một file (.exe) thì ưu tiên: bấm đúp là cài, khỏi giải nén
+          var exe = (d.assets || []).filter(function (a) { return /\.exe$/i.test(a.name); })[0];
+          var zip = exe || (d.assets || []).filter(function (a) { return /\.zip$/i.test(a.name); })[0];
+          if (exe) {
+            var gc = $("#ghiChuTai");
+            if (gc) gc.innerHTML = "Tải về rồi <b>bấm đúp file .exe</b> để cài (đóng AutoCAD trước). Nếu Windows hiện khung xanh “Windows protected your PC” thì bấm <b>More info → Run anyway</b>.";
+          }
           if (zip) {
             var nut = $("#nutTai");
             nut.href = zip.browser_download_url;
