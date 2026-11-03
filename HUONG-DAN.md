@@ -14,6 +14,17 @@ Chỉ sửa **một file**: `data/plugins.js` (mở bằng Notepad cũng đượ
 
 Trạng thái giá (`trangThai`): `"mien-phi"`, `"pro"` (ghi giá ở ô `gia`), `"sap-ra-mat"`.
 
+## Bản tiếng Anh
+
+Web có nút **VI / EN** ở đầu trang. Người xem ở Việt Nam (hoặc trình duyệt tiếng Việt) tự thấy tiếng Việt,
+người ở nước ngoài tự thấy tiếng Anh. Link chia sẻ cho người nước ngoài: thêm `?lang=en`, ví dụ
+`https://arcthanhbinhtran-ai.github.io/m5studio/chi-tiet.html?id=m5-do-dac&lang=en`.
+
+- Chữ tiếng Anh của plugin nằm trong ô `en: { ... }` của từng plugin trong `data/plugins.js`
+  (mô tả, tính năng, chú thích ảnh). Ô nào thiếu thì web dùng tiếng Việt.
+- Chữ cố định trên các trang nằm ở thuộc tính `data-en="..."` trong file HTML.
+- Ủng hộ, thư viện: ô `en` trong `data/cai-dat.js`, `data/thu-vien.js`.
+
 ## Thông tin ủng hộ, link mạng xã hội
 
 Sửa `data/cai-dat.js`. Mã QR là ảnh `assets/img/qr-ung-ho.png`.
