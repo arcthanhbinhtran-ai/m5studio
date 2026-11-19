@@ -145,7 +145,7 @@ window.M5_PLUGINS = [
     phanMem: "AutoCAD",
     trangThai: "mien-phi",
     gia: "",
-    phienBan: "0.2",
+    phienBan: "0.3",
     luotTai: null,
     anh: "assets/img/alo-lite.png",
     anhChup: [],
@@ -158,6 +158,7 @@ window.M5_PLUGINS = [
       "Danh sách bản vẽ: số hiệu, tên, tỉ lệ, ngày, đánh số lại",
       "Ghi vào / đọc từ khung tên",
       "Sửa nhiều bằng Excel (.csv)",
+      "Tab ALO Lite trên ribbon, tự kiểm tra bản mới",
       "Chưa có: sheet set (.dst), field, in PDF cả bộ — dùng ALO bản đầy đủ"
     ],
     yeuCau: "AutoCAD LT 2024 – 2027 (cả AutoCAD 2021 – 2027)",
@@ -171,6 +172,7 @@ window.M5_PLUGINS = [
         "Drawing list: number, title, scale, date, renumbering",
         "Write to / read from title blocks",
         "Bulk edits through Excel (.csv)",
+        "ALO Lite ribbon tab, built-in update check",
         "Not yet: sheet sets (.dst), fields, whole-set PDF — use the full ALO"
       ],
       yeuCau: "AutoCAD LT 2024 – 2027 (also AutoCAD 2021 – 2027)",
