@@ -138,6 +138,46 @@ window.M5_PLUGINS = [
     }
   },
   {
+    id: "alo-lite",
+    ten: "ALO Lite",
+    moTaNgan: "Bản ALO cho AutoCAD LT 2024+: tạo layout hàng loạt, danh sách bản vẽ, khung tên.",
+    moTa: "AutoCAD LT không nạp được plugin .NET nên không dùng được ALO bản đầy đủ. ALO Lite viết bằng AutoLISP, chạy trên AutoCAD LT 2024 trở lên (và AutoCAD thường 2021+): quét khung trong Model và tạo layout hàng loạt từ một layout mẫu, khung nhìn tự chọn tỉ lệ chuẩn và xoay theo khung; danh sách bản vẽ có đánh số lại, ghi / đọc khung tên; sửa nhiều bằng Excel. Bản 0.1 là bản thử đầu tiên.",
+    phanMem: "AutoCAD",
+    trangThai: "mien-phi",
+    gia: "",
+    phienBan: "0.1",
+    luotTai: null,
+    anh: "assets/img/alo-lite.png",
+    anhChup: [],
+    video: "",
+    taiVe: "https://github.com/arcthanhbinhtran-ai/alo-lite/releases/latest",
+    github: "arcthanhbinhtran-ai/alo-lite",
+    tinhNang: [
+      "Quét khung trong Model (block hoặc rectang, cả khung xoay)",
+      "Tạo layout hàng loạt từ layout mẫu, tự chọn tỉ lệ, khoá khung nhìn",
+      "Danh sách bản vẽ: số hiệu, tên, tỉ lệ, ngày, đánh số lại",
+      "Ghi vào / đọc từ khung tên",
+      "Sửa nhiều bằng Excel (.csv)",
+      "Chưa có: sheet set (.dst), field, in PDF cả bộ — dùng ALO bản đầy đủ"
+    ],
+    yeuCau: "AutoCAD LT 2024 – 2027 (cả AutoCAD 2021 – 2027)",
+    deXuat: false,
+    en: {
+      moTaNgan: "ALO for AutoCAD LT 2024+: batch layouts, drawing list, title blocks.",
+      moTa: "AutoCAD LT cannot load .NET plugins, so the full ALO does not run there. ALO Lite is written in AutoLISP and runs on AutoCAD LT 2024 and later (and regular AutoCAD 2021+): scan frames in Model space and create layouts in bulk from a template layout, with the viewport scale picked automatically and rotated to match the frame; a drawing list with renumbering and title block read / write; bulk edits through Excel. 0.1 is the first test release.",
+      tinhNang: [
+        "Scan frames in Model space (blocks or rectangles, rotated too)",
+        "Create layouts in bulk from a template layout, auto scale, locked viewports",
+        "Drawing list: number, title, scale, date, renumbering",
+        "Write to / read from title blocks",
+        "Bulk edits through Excel (.csv)",
+        "Not yet: sheet sets (.dst), fields, whole-set PDF — use the full ALO"
+      ],
+      yeuCau: "AutoCAD LT 2024 – 2027 (also AutoCAD 2021 – 2027)",
+      giaoDien: "Interface language: Vietnamese for now. Install: unzip, double-click CaiDat.bat, type ALOL."
+    }
+  },
+  {
     id: "ihl",
     ten: "IHL",
     moTaNgan: "In PDF hàng loạt theo khung bản vẽ hoặc theo từng tab Layout — miễn phí cho sinh viên quy hoạch.",
