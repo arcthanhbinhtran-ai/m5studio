@@ -41,7 +41,7 @@ window.M5_PLUGINS = [
     phanMem: "AutoCAD",
     trangThai: "mien-phi",
     gia: "",
-    phienBan: "4.0",
+    phienBan: "4.2",
     luotTai: null,
     anh: "assets/img/m5dodac-dien-tich.png",
     anhChup: [
@@ -55,6 +55,7 @@ window.M5_PLUGINS = [
     huongDan: "assets/docs/M5DODAC_HuongDan.pdf",
     tinhNang: [
       "Tổng chiều dài polyline, line, cung tròn, spline, elip",
+      "Kiểm tra vạt (chamfer): từ hai đầu vạt tới điểm giao bao nhiêu",
       "Diện tích hatch và polyline kín, ra m² hoặc ha",
       "Soát và trừ phần chồng lấn, tô đỏ chỗ trùng",
       "Kẻ đỏ chỗ hở của polyline chưa kín, tự đóng nếu muốn",
@@ -75,6 +76,7 @@ window.M5_PLUGINS = [
       ],
       tinhNang: [
         "Total length of polylines, lines, arcs, splines, ellipses",
+        "Chamfer check: distances from both chamfer ends to the corner",
         "Area of hatches and closed polylines, in m² or ha",
         "Find and subtract overlaps, shaded red",
         "Red marks on gaps of open polylines, close them if you want",
